@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="book">
+            <div id="pages" class="pages">
+                <div class="airwayswrapper">
+                    <table class="tg">
+                        <thead>
+                          <tr>
+                            <th class="tg-wwtp">DETAILS</th>
+                            <th class="tg-wwtp">SKILL</th>
+                            <th class="tg-wwtp" colspan="4">Incident</th>
+                            <th class="tg-wwtp">REFLECTION</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="tg-ldtq">DATE</td>
+                            <td class="tg-ldtq">SKILL USED<br></td>
+                            <td class="tg-ldtq">AIRWAY <br>TYPE/SIZE</td>
+                            <td class="tg-ldtq" colspan="2">NO. OF <br>ATTEMPTS</td>
+                            <td class="tg-ldtq"><span style="font-weight:400;font-style:normal">DETAILS</span></td>
+                            <td class="tg-ldtq">OUTCOME / NOTES / PROBLEMS</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-t1kf">4 May 2015</td>
+                            <td class="tg-t1kf">Intubation</td>
+                            <td class="tg-t1kf">8mm</td>
+                            <td class="tg-t1kf" colspan="2">One</td>
+                            <td class="tg-t1kf" rowspan="5">66 Year old male, cardiac arrest, witnessed, etc. <br><br> Scenario given as 43 year old female traumatic cardiac arrest.</td>
+                            <td class="tg-t1kf" rowspan="5">Remember stepwise approach to<br>Airway management <br>and use of basic airway techniques <br><br>pT tx to ED. Remember too prepare equipment and secure tube.</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-ldtq">CAD No.</td>
+                            <td class="tg-ldtq">INDICATION</td>
+                            <td class="tg-ldtq">CANOGRAPHY</td>
+                            <td class="tg-ldtq" colspan="2">BOUGIE</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-t1kf">876</td>
+                            <td class="tg-t1kf" rowspan="3">Cardiac<br>arrest</td>
+                            <td class="tg-t1kf" rowspan="3">Colourmetric<br> &amp; <br>Waveform</td>
+                            <td class="tg-t1kf">YES</td>
+                            <td class="tg-t1kf"><strong>NO</strong></td>
+                          </tr>
+                          <tr>
+                            <td class="tg-ldtq">ACTIVITY</td>
+                            <td class="tg-ldtq" colspan="2">SUCCESSFULL</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-t1kf">Live</td>
+                            <td class="tg-t1kf">YES</td>
+                            <td class="tg-t1kf">NO</td>
+                          </tr>
+                        </tbody>
+                        </table>
+                </div>
+            </div>
+            <div class="tabs">
+              <button id="homeButton" class="tab">HOME</button>
+              <button id="profileButton" class="tab">PROFILE</button>
+              <button id="airwayButton" class="tab">AIRWAYS</button>
+              <button id="medicationButton" class="tab">MEDICATION</button>
+              <button id="clinicalButton" class="tab">CLINICAL</button>
+              <button id="governanceButton" class="tab">GOVERNANCE</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="firebase.js"></script>
+</body>
+</html>
+

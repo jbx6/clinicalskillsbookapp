@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Include Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"></script>
+
+    <!-- Firebase UI CSS (if needed) -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="book">
+            <div id="pages" class="pages">
+                <div class="profilewrapper">
+                    <div class="tg-wrap">
+                        <table class="tg">
+                          <thead>
+                            <tr>
+                              <th class="tg-amwm" colspan="4">Profile</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="tg-1wig" colspan="2">Name</td>
+                              <td class="tg-1wig" colspan="2">Position</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax" colspan="2">Jeremy Bailey</td>
+                              <td class="tg-0lax" colspan="2">NQP</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-1wig" colspan="4"><span style="font-style:normal">Contact Details</span></td>
+                            </tr>
+                            <tr>
+                              <td class="tg-1wig">Work</td>
+                              <td class="tg-1wig">Home</td>
+                              <td class="tg-1wig" colspan="2">Emergency</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">Oxford City RC<br><br>Churchill Drive<br>Headington<br>OXFORDSHIRE<br><br>OX3 7LH<br><br>01865 741592<br>jeremy.bailey@scas.nhs.uk</td>
+                              <td class="tg-0lax">5 High Street<br><br>Eynsham<br>Witney<br>OXFORSHIRE<br><br>OX29 4HA<br><br>07375 704116<br>jbx_6@icloud.com</td>
+                              <td class="tg-0lax" colspan="2"><span style="font-weight:bold">Contact name:</span><br>Jo Bailey<br><br><span style="font-weight:bold">Contact relation:</span><br>Mother<br><br><span style="font-weight:bold">Number(s):</span><br>07901 611997</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                </div>
+            </div>
+            <div class="tabs">
+                <button id="homeButton" class="tab"><a href="index.html">HOME</a></button>
+                <button id="profileButton" class="tab"><a href="profile.html">PROFILE</a></button>
+                <button id="airwayButton" class="tab"><a href="airways.html">AIRWAYS</a></button>
+                <button id="medicationButton" class="tab"><a href="medication.html">MEDICATION</a></button>
+                <button id="medicationButton" class="tab"><a href="clinical.html">CLINICAL</a></button>
+                <button id="governanceButton" class="tab"><a href="governance.html">GOVERNANCE</a></button>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="wrapper">
+        <div class="book">
+            <div id="pages" class="pages">
+                <!-- Your existing HTML content -->
+            </div>
+            <div class="tabs">
+                <button id="homeButton" class="tab"><a href="index.html">HOME</a></button>
+                <button id="profileButton" class="tab"><a href="profile.html">PROFILE</a></button>
+                <button id="airwayButton" class="tab"><a href="airways.html">AIRWAYS</a></button>
+                <button id="medicationButton" class="tab"><a href="medication.html">MEDICATION</a></button>
+                <button id="medicationButton" class="tab"><a href="clinical.html">CLINICAL</a></button>
+                <button id="governanceButton" class="tab"><a href="governance.html">GOVERNANCE</a></button>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="pages" class="pages">
+        <div class="profilewrapper">
+            <fieldset>
+                <legend>Login</legend>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username"><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"><br>
+                <!-- Call the handleSignInClick function on button click -->
+                <button type="button" id="loginButton" onclick="handleSignInClick()">Login</button>
+            </fieldset>
+        </div>
+    </div>
+
+    <script type="module">
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyArekZ2aspQYrm7apuPMZOcQcSRlyyeEeM",
+          authDomain: "clinicalskillsbook.firebaseapp.com",
+          databaseURL: "https://clinicalskillsbook-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "clinicalskillsbook",
+          storageBucket: "clinicalskillsbook.appspot.com",
+          messagingSenderId: "721423214230",
+          appId: "1:721423214230:web:9711641e192ad303ecc4b7",
+          measurementId: "G-74JZ6DEKR7"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+                // Call the signInUser function when the login button is clicked
+        function handleSignInClick() {
+            signInUser();
+        }
+
+        // Define the signIn function
+        function signInUser() {
+          const email = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          firebase.signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              // User signed in successfully
+              const user = userCredential.user;
+
+              // Add actions upon successful sign-in
+              console.log(`Welcome, ${user.email}!`);
+
+              // Redirect to the index.html page
+              window.location.href = "index.html";
+            })
+            .catch((error) => {
+              // Handle sign-in failure
+              console.error(error.message);
+
+              // Display an error message to the user
+              alert("Sign-in failed. Please check your username and password.");
+            });
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="book">
+            <div id="pages" class="pages">
+                <div class="medicationswrapper">
+                    <table class="tg">
+                    <thead>
+                        <tr>
+                          <th class="tg-wwtp">DETAILS</th>
+                          <th class="tg-wwtp">MEDS</th>
+                          <th class="tg-wwtp">INCIDENT</th>
+                          <th class="tg-wwtp">REFLECTION</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="tg-ldtq">DATE</td>
+                          <td class="tg-ldtq">MEDICATION</td>
+                          <td class="tg-ldtq">DETAILS</td>
+                          <td class="tg-ldtq">OUTCOME / NOTES</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-dwa0"><input type="datetime-local" name="administrationDateTime" id="administrationDateTime"></td>
+                          <td class="tg-dwa0"><select name="medicationAdministered" id="medicationAdministered">
+                            <option value="morphine">Morphine</option>
+                            <option value="Ondansetron">Ondansetron</option>
+                          </select></td>
+                          <td class="tg-t1kf" rowspan="3">
+                            <div class="socrateswrapper">
+                              <label for="site">Site</label>
+                              <input type="text" name="site" id="site">
+                              <label for="onset">Onset</label>
+                              <input type="text" name="onset" id="onset">
+                              <label for="site">Character</label>
+                              <input type="text" name="character" id="character">
+                              <label for="onset">Radiating/ Refering</label>
+                              <input type="text" name="radiatingRefering" id="radiatingRefering">
+                              <label for="site">Associated Symptoms</label>
+                              <input type="text" name="associatedSymptoms" id="associatedSymptoms">
+                              <label for="onset">Timing</label>
+                              <input type="text" name="timing" id="timing">
+                              <label for="site">Exacerbating/ Alleviating</label>
+                              <input type="text" name="exacerbatingAlleviating" id="exacerbatingAlleviating">
+                              <label for="site">Severity</label>
+                              <input type="text" name="severity" id="severity">
+                              <button type="submit" id="submitSocratesAssessment"></button>
+                            </div>
+                            <textarea name="detailsTextArea" id="detailsTextArea" rows="10">65 YOM Myocardial Infarction, transfer to PPCI. Pain score of 8/10.</textarea>
+
+                            </td>
+                          <td class="tg-t1kf" rowspan="3"><textarea name="outcomeNotesTextArea" id="outcomeNotesTextArea" rows="10">Monitor mmHg, EtCo2, RR, etc. Titrate morphine to effect while being cautious of adverse effects, events, interactions, etc.</textarea></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-ldtq">CAD No.</td>
+                          <td class="tg-ldtq">INDICATION</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-t1kf"><input type="number" name="cadNumberInput" id="cadNumber"></td>
+                          <td class="tg-t1kf"><input type="text" name="indicationInput" id="medicationIndication"></td>
+                        </tr>
+                      </tbody>
+                      </table>
+                      <br>
+                      <div class="tabs">
+                        <button id="submitMedicationSubmission" class="tab">Submit</button>
+                      </div>
+                      <br>
+                      <div id="submissionOutput">
+                      </div>
+                </div>
+
+            </div>
+            <div class="tabs">
+                <button id="homeButton" class="tab">HOME</button>
+                <button id="profileButton" class="tab">PROFILE</button>
+                <button id="airwayButton" class="tab">AIRWAYS</button>
+                <button id="medicationButton" class="tab">MEDICATION</button>
+                <button id="clinicalButton" class="tab">CLINICAL</button>
+                <button id="governanceButton" class="tab">GOVERNANCE</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="medication.js"></script>
+</body>
+</html>
+
